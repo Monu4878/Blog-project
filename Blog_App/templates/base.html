@@ -1,0 +1,28 @@
+{% extends 'boots.html' %}
+{% block content %}
+<style>
+    img {
+    max-width: 45%;
+}
+h1{
+    font-size: 4rem;
+    text-decoration: wavy;
+}
+</style>
+<div class="container text-center">
+<h1>Blogs </h1><hr>
+    {% for i in abc  %}
+    <h2>{{i.blog_heading}}</h2>
+<img src="{{i.blog_images.url}}"><br> <br>
+<h4>Description - </h4>
+<p>{{i.blog_desc}}</p><br>
+Uploaded on - {{i.pub_date}}
+By - {{i.pub_name}}<br>
+<button type="submit">Like</button>
+<button type="submit">Comments</button>
+<a href="{% url 'update' i.id %} " class="btn btn-primary">Update</a><br>
+<hr>
+{% endfor %}
+
+</div>
+{% endblock content %}

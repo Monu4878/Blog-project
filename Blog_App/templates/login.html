@@ -1,0 +1,17 @@
+{% extends 'boots.html' %}
+{% block content %}
+
+<div class="container">
+    <form method="POST">
+        <div class="form-group"> 
+            {%csrf_token%}
+            <input type="text" name="username" placeholder="enter your username" class="form-control"><br>
+            <input type="password" name="password" placeholder=" password" class="form-control"><br>
+            <button type="submit" class="btn btn-success">Login</button>
+        </form>
+    </div>
+</div>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+{% endblock content %}

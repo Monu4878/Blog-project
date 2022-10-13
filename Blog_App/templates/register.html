@@ -1,0 +1,18 @@
+{% extends 'boots.html' %}
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+<input type="text" name="first_name" placeholder="enter first_name"><br>
+<input type="text" name="last_name" placeholder="enter last_name"><br>
+<input type="text" name="email" placeholder="enter email"><br>
+<input type="text" name="username" placeholder="enter username"><br>
+<input type="password" name="password1" placeholder="password"><br>
+<input type="password" name="password2" placeholder="verify password"><br>
+<button type="submit" class="btn btn-primary">Register Now</button>
+</form>
+{% for msg in messages %}
+{{msg}}
+
+{% endfor %}
+{% endblock content %}

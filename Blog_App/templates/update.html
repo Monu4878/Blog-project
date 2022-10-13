@@ -1,0 +1,17 @@
+{% extends 'boots.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{% comment %} {{ form | crispy}} {% endcomment %}
+{{form.blog_heading | as_crispy_field}}
+{{form.blog_images | as_crispy_field}}
+{{form.blog_desc | as_crispy_field}}
+{{form.pub_name | as_crispy_field}}
+
+
+<button type="submit" class="btn btn-danger">Submit</button>
+</form>
+
+{% endblock content %}
